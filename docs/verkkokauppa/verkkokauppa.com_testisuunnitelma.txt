@@ -1,0 +1,87 @@
+
+Testaussuunnitelma: Verkkokauppa.comin tuotehaku
+
+Testikohde: https://www.verkkokauppa.com/
+Testauksen omistaja: Andreas Lang
+
+Askel 1: Testattava toiminnallisuus
+Tuotehaku: käyttäjä hakee tuotteita hakusanalla ja voi rajata hakutuloksia suodattimilla.
+
+Askel 2: Alustavat havainnot
+Nämä ovat testaushetkellä tehtyjä havaintoja, eivät pysyviä odotusarvoja. Hakutulokset ja niiden määrä voivat muuttua sivuston tuotetietojen mukana.
+- Haulla "iphone" käyttöliittymä näytti 1412 tulosta.
+- Haulla "kjhkjh" käyttöliittymä näytti ilmoituksen "Ei tuloksia haulla \"kjhkjh\"".
+- Haulla "eläimet" käyttöliittymä näytti 13 tulosta.
+- Tyhjällä hakusanalla Etsi-painikkeen valitseminen ei näyttänyt käynnistävän hakua.
+- Haulla "iphone" ja tuotealueen "Pelaaminen" suodattimella käyttöliittymä näytti 2 tulosta.
+
+Askel 3: Verifiointipisteet
+V1: Hakusana palauttaa hakusanaa vastaavia tuotteita.
+V2: Hausta, jolla ei ole osumia, näytetään selkeä ilmoitus.
+V3: Tyhjällä hakusanalla hakua ei käynnistetä eikä hakutuloksia vaihdeta.
+V4: Hakutulosten määrä näytetään ja se vastaa haun tuloksia.
+V5: Tuotealueen suodatin rajaa tulokset valitun alueen mukaisiksi.
+V6: Haku käsittelee ääkkösiä ja löytää niitä sisältäviä hakutuloksia.
+V7: Osittainen hakusana löytää sitä vastaavia tuotteita.
+V8: Haku ei riipu hakusanan kirjainkoosta.
+V9: Alun ja lopun ylimääräiset välilyönnit eivät muuta haun tulosta.
+V10: Haku voidaan suorittaa sekä Enter-näppäimellä että Etsi-painikkeella.
+
+
+Askel 4: Variaatiot
+Hakusanan sisältö:
+- Yleinen hakusana, jolla on paljon tuloksia: "iphone".
+- Tarkka tuotenimi tai tuotekoodi.
+- Hakusana, jolla ei ole osumia: "kjhkjh".
+- Ääkköset: "eläimet".
+- Erikoismerkit: !?#%&.
+- Numerot: "5080".
+- Osittainen sana: "ipho".
+- Kirjoitusvirhe: "ifone"; tarkistetaan, ehdottaako haku korjauksia.
+
+Hakusanan pituus ja välilyönnit:
+- Tyhjä hakusana.
+- Yhden merkin hakusana: "a".
+- Pitkä hakusana, esimerkiksi 200 merkkiä.
+- Välilyönnit hakusanan alussa ja lopussa: " iphone ".
+- Useampi sana: "iphone kuoret".
+
+Kirjainkoko:
+- "IPHONE", "iphone" ja "iPhone".
+
+Suodattimet ja käyttötapa:
+- Ei suodatinta, yksi tuotealueen suodatin ja useampi suodatin yhtä aikaa.
+- Suodatin, joka ei tuota osumia.
+- Haun suorittaminen Enter-näppäimellä ja Etsi-painikkeella.
+- Hakuehdotuksen valitseminen listasta.
+- Selaimen takaisin-painikkeen käyttäminen hakutuloksista.
+
+Askel 5: Testitapaukset
+| ID | Testitapaus | Verifiointipiste | Prioriteetti |
+| --- | --- | --- | --- |
+| TC-01 | Haku yleisellä sanalla ("iphone") palauttaa osuvia tuloksia ja näyttää tulosten määrän. | V1, V4 | Korkea |
+| TC-02 | Haku merkkijonolla ilman osumia ("kjhkjh") näyttää selkeän ilmoituksen. | V2 | Korkea |
+| TC-03 | Tyhjän hakusanan lähettäminen ei käynnistä hakua eikä vaihda tuloksia. | V3 | Korkea |
+| TC-04 | Haku ääkkösillä ("eläimet") palauttaa hakua vastaavia tuloksia. | V6 | Keskitaso |
+| TC-05 | Haku osittaisella sanalla ("ipho") palauttaa hakua vastaavia tuloksia. | V7 | Korkea |
+| TC-06 | Tuotealueen suodatin rajaa hakutulokset valitun alueen mukaisiksi. | V5 | Korkea |
+| TC-07 | Haun tulokset eivät riipu kirjainkoosta ("IPHONE" ja "iphone"). | V8 | Keskitaso |
+| TC-08 | Haku toimii sekä Enter-näppäimellä että Etsi-painikkeella. | V10 | Keskitaso |
+| TC-09 | Alun ja lopun välilyönnit eivät muuta haun tulosta. | V9 | Matala |
+
+Askel 6: Testauksen rajaus
+Testataan:
+- Tuotehakua yleisellä sanalla, osumattomalla ja tyhjällä hakusanalla.
+- Ääkkösiä, osittaista sanaa, kirjainkokoa ja hakusanan ympärillä olevia välilyöntejä.
+- Tuotealueen suodatinta sekä haun suorittamista Enterillä ja Etsi-painikkeella.
+
+Ei testata tässä testikierroksessa:
+- Ostoskoria, kassaa, tilausta, kirjautumista tai maksamista; ne eivät kuulu tuotehaun rajaukseen.
+- Automaattisia hakuehdotuksia, takaisin-painiketta, erikoismerkkejä, numeroita, yhden merkin tai hyvin pitkää hakusanaa, kirjoitusvirhe-ehdotuksia tai usean suodattimen yhdistelmiä. Nämä ovat jatkotestauksen variaatioita.
+- Mobiililaitteita, muita selaimia tai suorituskyky-, tietoturva- ja saavutettavuusominaisuuksia.
+
+Askel 7: Testausympäristö
+Suoritustapa: Manuaalinen.
+Selain ja versio: [täydennä].
+Laite ja käyttöjärjestelmä: [täydennä].
+Testauspäivä: [täydennä].
