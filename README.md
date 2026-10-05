@@ -11,11 +11,16 @@ Tarkoituksena on harjoitella testauksen ammattikäytäntöjä: testattavan kohte
 
 ## Sisältö
 
+Juuren `docs/`-tiedostot ja `robot/tests/`-testit koskevat SauceDemoa. Verkkokauppa.comin erilliset dokumentit löytyvät `docs/verkkokauppa/`-kansiosta, ja sen automaatiotestit kuuluvat kansioon `robot/tests/verkkokauppa/`.
+
 | Tiedosto | Kuvaus |
-|---|---|
+| --- | --- |
 | [docs/suunnitelma.md](docs/suunnitelma.md) | Testaussuunnitelma: kohde, verifiointipisteet, variaatiot, rajaus |
 | [docs/testitapaukset.md](docs/testitapaukset.md) | Testitapaukset esiehtoineen, askeleineen ja odotettuine tuloksineen |
 | [docs/raportti.md](docs/raportti.md) | Testausraportti: kattavuus, havainnot ja arvio tuotelaadusta |
+| [docs/verkkokauppa/suunnitelma.md](docs/verkkokauppa/suunnitelma.md) | Verkkokauppa.comin testaussuunnitelmapohja |
+| [docs/verkkokauppa/testitapaukset.md](docs/verkkokauppa/testitapaukset.md) | Verkkokauppa.comin testitapauspohja |
+| [docs/verkkokauppa/raportti.md](docs/verkkokauppa/raportti.md) | Verkkokauppa.comin testausraporttipohja |
 | `robot/` | Robot Framework -automaatiotestit |
 
 ## Testiautomaatio

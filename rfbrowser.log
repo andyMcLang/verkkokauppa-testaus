@@ -1,0 +1,78 @@
+2026-10-02 15:20:42,700 [INFO    ] ======================================================================
+2026-10-02 15:20:42,701 [INFO    ] Installing node dependencies...
+2026-10-02 15:20:43,897 [INFO    ] Installing rfbrowser node dependencies at C:\Python314\Lib\site-packages\Browser\wrapper
+2026-10-02 15:20:46,179 [INFO    ] npm error code EPERM
+2026-10-02 15:20:46,179 [INFO    ] npm error syscall rmdir
+2026-10-02 15:20:46,180 [INFO    ] npm error path C:\Python314\Lib\site-packages\Browser\wrapper\node_modules\@bufbuild
+2026-10-02 15:20:46,180 [INFO    ] npm error errno -4048
+2026-10-02 15:20:46,181 [INFO    ] npm error [Error: EPERM: operation not permitted, rmdir 'C:\Python314\Lib\site-packages\Browser\wrapper\node_modules\@bufbuild'] {
+2026-10-02 15:20:46,181 [INFO    ] npm error   errno: -4048,
+2026-10-02 15:20:46,182 [INFO    ] npm error   code: 'EPERM',
+2026-10-02 15:20:46,182 [INFO    ] npm error   syscall: 'rmdir',
+2026-10-02 15:20:46,182 [INFO    ] npm error   path: 'C:\\Python314\\Lib\\site-packages\\Browser\\wrapper\\node_modules\\@bufbuild'
+2026-10-02 15:20:46,183 [INFO    ] npm error }
+2026-10-02 15:20:46,183 [INFO    ] npm error
+2026-10-02 15:20:46,183 [INFO    ] npm error The operation was rejected by your operating system.
+2026-10-02 15:20:46,184 [INFO    ] npm error It's possible that the file was already in use (by a text editor or antivirus), or that you lack permissions to access it.
+2026-10-02 15:20:46,184 [INFO    ] npm error
+2026-10-02 15:20:46,184 [INFO    ] npm error If you believe this might be a permissions issue, please double-check the permissions of the file and its containing directories, or try running the command again as root/Administrator.
+2026-10-02 15:20:46,185 [INFO    ] npm error A complete log of this run can be found in: C:\Users\andreas.lang\AppData\Local\npm-cache\_logs\2026-10-02T12_20_44_396Z-debug-0.log
+2026-10-02 15:20:46,218 [INFO    ] 
+2026-10-02 15:20:46,218 [INFO    ] 
+2026-10-02 15:20:46,219 [INFO    ] 
+2026-10-02 15:20:46,219 [INFO    ] ======================================================================
+2026-10-02 15:20:46,225 [INFO    ] Traceback (most recent call last):
+  File "C:\Python314\Lib\site-packages\Browser\entry\__main__.py", line 241, in init
+    rfbrowser_init(skip_browsers, silent_mode, with_deps, browser)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\Browser\entry\rfbrowser_init.py", line 228, in rfbrowser_init
+    _process_poller(process, silent_mode)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\site-packages\Browser\entry\rfbrowser_init.py", line 203, in _process_poller
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Problem installing node dependencies.Node process returned with exit status 4294963248
+2026-10-02 15:20:46,225 [INFO    ] ======================================================================
+2026-10-02 15:20:46,225 [INFO    ] Used Python is: C:\Python314\python.exe
+Version: 3.14.7
+2026-10-02 15:20:46,226 [INFO    ] ======================================================================
+2026-10-02 15:20:46,226 [INFO    ] pip freeze output:
+2026-10-02 15:20:46,815 [INFO    ] click==8.4.2
+colorama==0.4.6
+grpcio==1.83.0
+grpcio-tools==1.83.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+natsort==8.4.0
+overrides==7.7.0
+platformdirs==4.11.2
+pluggy==1.6.0
+protobuf==7.35.1
+psutil==7.2.2
+Pygments==2.20.0
+PyYAML==6.0.3
+rich==15.0.0
+robotcode==2.7.0
+robotcode-core==2.7.0
+robotcode-modifiers==2.7.0
+robotcode-plugin==2.7.0
+robotcode-robot==2.7.0
+robotcode-runner==2.7.0
+robotframework==7.4.2
+robotframework-assertion-engine==5.0.1
+robotframework-browser==20.3.0
+robotframework-pythonlibcore==4.6.0
+seedir==0.5.1
+setuptools==84.0.0
+tomli_w==1.2.0
+typing_extensions==4.16.0
+wrapt==2.3.0
+2026-10-02 15:20:46,816 [INFO    ] ======================================================================
+2026-10-02 15:20:47,421 [INFO    ] npm version is:n
+2026-10-02 15:20:47,422 [INFO    ] 11.19.0
+2026-10-02 15:20:47,422 [INFO    ] ======================================================================
+2026-10-02 15:20:47,422 [INFO    ] Installation directory `C:\Python314\Lib\site-packages\Browser\wrapper` does not contain the required files for unknown reason. Investigate the npm output and fix possible problems.
+Printing contents:
+2026-10-02 15:20:47,569 [INFO    ] None
+2026-10-02 15:20:47,569 [INFO    ] ======================================================================
