@@ -21,6 +21,7 @@ Juuren `docs/`-tiedostot ja `robot/tests/`-testit koskevat SauceDemoa. Verkkokau
 | [docs/verkkokauppa/suunnitelma.md](docs/verkkokauppa/suunnitelma.md) | Verkkokauppa.comin testaussuunnitelmapohja |
 | [docs/verkkokauppa/testitapaukset.md](docs/verkkokauppa/testitapaukset.md) | Verkkokauppa.comin testitapauspohja |
 | [docs/verkkokauppa/raportti.md](docs/verkkokauppa/raportti.md) | Verkkokauppa.comin testausraporttipohja |
+| [docs/verkkokauppa/ohjeet_testin_rakentamiseen_ja_raportointiin.md](docs/verkkokauppa/ohjeet_testin_rakentamiseen_ja_raportointiin.md) | Aloittelijan vaiheittainen ohje testin suunnitteluun, automatisointiin ja raportointiin |
 | `robot/` | Robot Framework -automaatiotestit |
 
 ## Testiautomaatio

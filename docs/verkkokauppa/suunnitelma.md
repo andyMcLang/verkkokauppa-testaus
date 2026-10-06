@@ -9,11 +9,11 @@
 ## 1. Testattava kohde
 
 **Sovellus:** <https://www.verkkokauppa.com/>
-**Toiminnallisuus:** [Rajaa testattava käyttäjäpolku ennen verifiointipisteiden määrittelyä.]
+**Toiminnallisuus:** Tuotteen etsiminen haulla, oikealle tuotesivulle siirtyminen ja tyhjän haun estämisen tarkistaminen.
 
 **Toiminnallisuus käyttäjän näkökulmasta:**
 
-[Kuvaa lyhyesti, mitä käyttäjä yrittää tehdä.]
+Käyttäjä etsii haluamansa tuotteen ja avaa oikeat tuotetiedot. Tyhjällä hakukentällä hakua ei voi käynnistää.
 
 ---
 
@@ -23,18 +23,20 @@ Verifiointipiste on yksittäinen asia, jonka toimivuus pitää todentaa.
 
 | # | Verifiointipiste | Miksi tämä on tärkeä |
 | --- | --- | --- |
-| V1 | [Mitä käyttäytymistä tarkistetaan?] | [Miksi tämä on käyttäjälle tärkeää?] |
+| V1 | Hakutulokset latautuvat ja niissä näkyy hakusanaa vastaava tuote. | Käyttäjän täytyy löytää etsimänsä tuote haulla. |
+| V2 | Avatun tuotesivun nimi vastaa hakutuloksesta valittua tuotetta. | Käyttäjän pitää päästä tarkastelemaan oikeaa tuotetta, ei samankaltaista väärää tuotetta. |
+| V3 | Tyhjällä hakukentällä Etsi-painike on poissa käytöstä. | Estää tyhjän haun lähettämisen ja ilmaisee käyttäjälle, että hakusana tarvitaan. |
 
 ---
 
 ## 3. Variaatiot ja attribuutit
 
-- **Syötedata:** [Täydennä testissä käytettävät tiedot. Älä lisää oikeita henkilötietoja tai salasanoja.]
-- **Käyttäjätila:** [Esimerkiksi kirjautumistila ja ostoskorin alkutila.]
-- **Tuotetyyppi:** [Rajaa mukaan otettavat tuotteet tai tuoteryhmät, jos tarpeen.]
-- **Selain ja laite:** [Täydennä testattava selain ja laite.]
-- **Kieli:** [Täydennä käyttöliittymän kieli.]
-- **Muu:** [Muut testiin vaikuttavat olosuhteet.]
+- **Syötedata:** TC-01 käyttää hakusanaa `Apple 20 W USB-C laturi` ja tuotetta `Apple 20 W USB-C laturi (MD3J4)`, tuotenumero 663670. TC-02 käyttää tyhjää hakukenttää.
+- **Käyttäjätila:** Kirjautumaton käyttäjä; ostoskoria ei muuteta.
+- **Tuotetyyppi:** Yksi hakutuloksista valittava tuote. Tuotteen saatavuus tarkistetaan ennen testin automatisointia.
+- **Selain ja laite:** Chrome Windows-työasemalla; vahvistetaan ajohetkellä.
+- **Kieli:** Suomenkielinen käyttöliittymä, jos se on saatavilla testaushetkellä.
+- **Muu:** Julkisen verkkokaupan sisältö ja tuotevalikoima voivat muuttua. Hakutulosten määrä, järjestys, hinta ja saatavuus eivät ole tämän testin odotusarvoja. Jos evästeiden suostumusikkuna näkyy, testissä valitaan vain välttämättömät evästeet.
 
 ---
 
@@ -42,11 +44,16 @@ Verifiointipiste on yksittäinen asia, jonka toimivuus pitää todentaa.
 
 **Testataan:**
 
-- [Kirjaa mukaan rajatut toiminnallisuudet.]
+- Etusivun avaaminen.
+- Tuotteen hakeminen ja yhden hakutuloksen avaaminen.
+- Tyhjän hakukentän ja poissa käytöstä olevan Etsi-painikkeen tarkistaminen.
 
 **Ei testata, ja miksi:**
 
-- [Kirjaa pois rajatut toiminnallisuudet ja perustelu.]
+- Kirjautumista, ostoskoria, tilausta tai maksua; ne ovat tämän ensimmäisen polun ulkopuolella eikä testissä tehdä ostosta.
+- Nollatuloksen palautetta; tuotantosivuston epätarkka haku palautti eri automaatioympäristöissä eri tuloksia myös epätavallisilla hakusanoilla.
+- Muita selaimia, mobiililaitteita, suorituskykyä, tietoturvaa tai saavutettavuutta; niille tarvitaan omat rajatut testit.
+- Tuotteen hintaa tai saatavuutta pysyvänä odotusarvona, koska verkkokaupan sisältö voi muuttua.
 
 ---
 
@@ -54,7 +61,8 @@ Verifiointipiste on yksittäinen asia, jonka toimivuus pitää todentaa.
 
 | ID | Otsikko | Verifiointipiste | Prioriteetti |
 | --- | --- | --- | --- |
-| TC-01 | [Testitapauksen otsikko] | V1 | [Korkea / Keskitaso / Matala] |
+| TC-01 | Etsi tuote ja avaa sen tuotesivu | V1, V2 | Korkea |
+| TC-02 | Tyhjä hakukenttä ei käynnistä hakua | V3 | Keskitaso |
 
 Testitapausten yksityiskohdat: [testitapaukset.md](testitapaukset.md)
 
