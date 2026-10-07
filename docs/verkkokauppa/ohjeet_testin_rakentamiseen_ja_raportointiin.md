@@ -2,7 +2,7 @@
 
 Tässä ohjeessa rakennat yhden verkkokaupan testin alusta raporttiin. Etene tässä järjestyksessä: ymmärrä käyttäjän tarve, rajaa riski, päätä mitä todennat, kirjoita testitapaus ja automatisoi vasta sitten.
 
-Ohje soveltaa 1-2-1-keskustelun keskeisiä pointteja:
+Ohje soveltaa suunnittelun keskeisiä pointteja:
 
 - Testaajan tärkein työ on ymmärtää mitä testataan ja miksi. Robot Framework on väline, ei testauksen tavoite.
 - Tunnista ensin testattava asia eli verifiointipiste ja se näyttö, jolla voit sanoa asian toimivan tai epäonnistuvan.
@@ -91,7 +91,7 @@ Verkkokaupan etusivu avautuu
     [Documentation]    Varmistaa, että verkkokaupan etusivu avautuu.
     [Tags]    smoke
     [Teardown]    Close Browser
-    New Browser    chromium    headless=True
+    New Browser    chromium    channel=chrome    headless=True
     New Page    ${BASE_URL}
     ${page_title}=    Get Title
     Should Contain    ${page_title}    Verkkokauppa.com
@@ -116,25 +116,13 @@ Pidä testin tarkistukset sidottuina verifiointipisteisiin. Testin ei tarvitse t
 
 ## 8. Aja testi ja tutki tulos
 
-Aja verkkokaupan testihakemisto projektin virtuaaliympäristössä ja tallenna tulokset `results/`-kansioon. Tässä Windows-projektissa voit käyttää suoraan virtuaaliympäristön Pythonia:
+Aja verkkokaupan testihakemisto projektin juurikansiosta projektin virtuaaliympäristön Pythonilla:
 
 ```powershell
-.venv\Scripts\python.exe -m robot --outputdir results robot/tests/verkkokauppa/
+& .\.venv\Scripts\python.exe -m robotcode.cli robot robot/tests/verkkokauppa/
 ```
 
-RobotCode-ajossa käytä projektin virtuaaliympäristöä ja anna suite-hakemisto ajopoluksi:
-
-```powershell
-.venv\Scripts\python.exe -m robotcode.cli robot --outputdir results robot/tests/verkkokauppa/
-```
-
-Yksittäisen testin longnamen saat komennolla `.venv\Scripts\python.exe -m robotcode.cli discover tests robot/tests/verkkokauppa/`. Rajaa ajo longnamella ja anna edelleen suite-hakemisto poluksi:
-
-```powershell
-.venv\Scripts\python.exe -m robotcode.cli robot -bl "Verkkokauppa.Haku.TC-01 Etsi tuote ja avaa sen tuotesivu" robot/tests/verkkokauppa/
-```
-
-Älä anna yksittäistä `.robot`-tiedostoa ajopoluksi, koska silloin ylemmän suite-tason alustukset voivat jäädä pois.
+Tulokset tallentuvat projektin asetusten mukaisesti `results/`-kansioon. Yksittäisen testin longnamen saat komennolla `& .\.venv\Scripts\python.exe -m robotcode.cli discover tests robot/tests/verkkokauppa/`. Rajaa ajo longnamella `-bl "<longname>"` ja anna edelleen suite-hakemisto ajopoluksi. Älä anna yksittäistä `.robot`-tiedostoa ajopoluksi, koska silloin ylemmän suite-tason alustukset voivat jäädä pois.
 
 Ajon jälkeen tarkista:
 
