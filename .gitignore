@@ -6,4 +6,6 @@ report.html
 *.pyc
 __pycache__/
 .venv/
+.vscode/
 .env
+rfbrowser.log
